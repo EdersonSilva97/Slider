@@ -4,13 +4,44 @@
              x:Class="Slider.MainPage">
 
     <StackLayout>
-       <Label Text="Einstein Famous Qoutes" />
-       <Label Text="Try not to become a man of success.
-              Rather become a man o value." />
-       <Button Text="Next" />
-       <Slider Minimum="0" Maximum="1" />
-       <Label Text="Font Size: 14" />
-       <Slider Minimum="0" Maximum="1" />
+        <Label FontSize="Title" 
+               HorizontalTextAlignment="Center" 
+               Padding="0,20" Text="Einstein Famous Qoutes"
+               Margin="10"/>
+        <Label VerticalTextAlignment="Center"
+               BindingContext="{x:Reference sliderFont}"
+               FontSize="{Binding Value}"
+               Text="Try not to become a man of success. Rather become a man o value." 
+               HorizontalOptions="Center" 
+               VerticalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center" 
+               FontAttributes="Italic"
+               Margin="15"
+               x:Name="labelFrases"/>
+        <Button Text="Next"
+                CornerRadius="15"
+                Margin="20"
+                Clicked="Button_Clicked"/>
+        <Slider ThumbColor="DeepSkyBlue"
+                Minimum="0"
+                Maximum="8"
+                MinimumTrackColor="DeepSkyBlue"
+                MaximumTrackColor="Black"
+                Margin="20,0,20,0"
+                x:Name="sliderColor"
+                ValueChanged="sliderColor_ValueChanged"/>
+        <Label BindingContext="{x:Reference sliderFont}"
+               Text="{Binding Value}"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Large"/>
+        <Slider ThumbColor= "DeepSkyBlue"
+                Minimum="0"
+                Maximum="55"
+                MinimumTrackColor="DeepSkyBlue"
+                MaximumTrackColor="Black"
+                Margin="20,0,20,20"
+                x:Name="sliderFont"/>
     </StackLayout>
-    
+
 </ContentPage>
